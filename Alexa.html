@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Alexa ❤️</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', cursive, sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    cursor: pointer;
+  }
+
+  /* Estrellas */
+  .estrella {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white; border-radius: 50%;
+    opacity: 0.8;
+    animation: parpadeo linear infinite;
+  }
+  @keyframes parpadeo { 0%,100%{opacity:0.8;} 50%{opacity:0.2;} }
+
+  /* Estrellas fugaces */
+  .fugaz {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white; border-radius: 50%;
+    opacity: 0.9;
+    box-shadow: 0 0 6px #fff, 0 0 12px #ff77a9, 0 0 20px #ff4b5c;
+    transform: rotate(45deg);
+  }
+  @keyframes moverFugaz {
+    from { transform: translate(0,0) rotate(45deg); opacity: 1; }
+    to { transform: translate(-100vw, 100vh) rotate(45deg); opacity: 0; }
+  }
+
+  /* Partículas */
+  .particula {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: rgba(255,182,193,0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: flotar linear infinite;
+  }
+  @keyframes flotar {
+    from { transform: translateY(100vh) translateX(0); opacity:0.7; }
+    to { transform: translateY(-20vh) translateX(50px); opacity:0; }
+  }
+
+  /* Corazones flotantes */
+  .corazon {
+    position: fixed; bottom:-10px;
+    color: #ff4b5c; font-size: 20px;
+    animation: subir 6s linear infinite, parpadeoCorazon 1.5s infinite;
+    pointer-events: none;
+    text-shadow:0 0 5px #ff77a9,0 0 10px #ff4b5c,0 0 15px #ff77a9;
+  }
+  @keyframes subir { from {transform:translateY(0);} to {transform:translateY(-110vh);} }
+  @keyframes parpadeoCorazon {
+    0%,100%{text-shadow:0 0 5px #ff77a9,0 0 10px #ff4b5c;}
+    50%{text-shadow:0 0 15px #ff77a9,0 0 25px #ff4b5c;}
+  }
+
+  /* Texto y botones */
+  header { padding:50px 20px; text-shadow:0 0 8px #ff77a9,0 0 15px #ff4b5c; }
+  header h1 { font-size:3em; animation: brillo 2s infinite alternate; }
+  .mensaje { font-size:1.5em; margin:20px auto; max-width:700px; line-height:1.6; animation: brillo 3s infinite alternate; }
+  @keyframes brillo {
+    from{text-shadow:0 0 5px #ff77a9,0 0 10px #ff4b5c;}
+    to{text-shadow:0 0 15px #ff77a9,0 0 25px #ff4b5c;}
+  }
+
+  .galeria { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:20px; }
+  .galeria img { width:100%; border-radius:15px; box-shadow:0 4px 15px rgba(255,192,203,0.5); transition: transform 0.3s, box-shadow 0.3s; }
+  .galeria img:hover { transform: scale(1.05); box-shadow:0 0 25px rgba(255,192,203,0.8); }
+
+  .boton-amor,.boton-musica {
+    display:inline-block;margin:20px;padding:15px 30px;font-size:1.3em;
+    background:#ff4b5c;color:white;border:none;border-radius:50px;
+    cursor:pointer;box-shadow:0 4px 12px rgba(255,192,203,0.5);
+    animation:brilloBoton 2s infinite alternate;
+  }
+  .boton-amor:hover,.boton-musica:hover { background:#ff1e3c; box-shadow:0 0 25px #ff77a9; }
+  @keyframes brilloBoton {
+    from {box-shadow:0 0 10px #ff77a9,0 0 20px #ff4b5c;}
+    to {box-shadow:0 0 20px #ff77a9,0 0 40px #ff4b5c;}
+  }
+
+  footer { margin-top:50px; padding:20px; background:rgba(255,255,255,0.05);
+    font-size:1.2em; border-top:1px solid rgba(255,255,255,0.2);
+    text-shadow:0 0 8px #ff77a9,0 0 15px #ff4b5c; animation:brillo 3s infinite alternate; }
+</style>
+</head>
+<body>
+
+<audio id="musica" autoplay loop preload="auto">
+  <source src="Daddy Yankee - Si Supieras (Letra) ft. Wisin & Yandel.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <h1>💖 Para Alexa 💖</h1>
+  <button class="boton-musica" onclick="controlMusica()">⏯ Controlar música 🎶</button>
+  <p class="mensaje">Mi querida Alexa:
+lexa…
+A veces pienso que la vida tiene formas muy curiosas de unir a las personas. Hace un año y medio te conocí casi por casualidad, gracias a la universidad y porque eras amiga de mi hermana. Nunca imaginé que un simple número en mi teléfono se convertiría en algo tan importante para mí. Desde el primer mensaje, desde la primera vez que te hablé, sentí algo diferente… algo que no podía explicar del todo, pero que me gustaba.
+Tú sabes bien que en ese momento yo tenía a alguien más, y aun así, tú fuiste sincera conmigo y me marcaste un límite. Y aunque en ese momento me dolió, hoy lo agradezco, porque me demostraste que eres una mujer con valores, con claridad, con un corazón que merece ser querido de la forma correcta.
+El tiempo pasó… mis caminos cambiaron. Yo terminé mi relación, pero cuando por fin quise acercarme a ti sin ningún peso encima, me enteré de que tú ya estabas en otra historia. Y créeme, no te voy a mentir: sí me pegó. No por ego, sino porque sentía que la vida nos estaba jugando una broma pesada… como si hubiéramos llegado tarde el uno para el otro.
+Pero aun así, nunca dejé de pensar en ti. Nunca dejé de preguntarme qué hubiera pasado si el tiempo hubiera sido diferente, si mis decisiones hubieran llegado antes. Y aunque la vida te llevó a otro camino por un tiempo, yo siempre guardé ese pequeño espacio para ti, ese espacio que se queda cuando una persona te marca sin esforzarse.
+Pasaron meses… nueve para ser exactos. Y un día, simplemente, volvimos a coincidir. Y ahí entendí algo: lo que es para uno, tarde o temprano encuentra la manera de regresar. Tú regresaste. No porque yo te buscara con desesperación, ni porque las circunstancias fueran perfectas, sino porque la vida decidió que era momento de retomar eso que dejamos en pausa.
+Hoy, que volvimos a hablar, que volvimos a acercarnos… siento que por fin tenemos una oportunidad sincera, limpia, sin terceros, sin miedos, sin cargas del pasado. Siento que esta vez todo puede fluir distinto, más bonito, más real.
+Alexa, no quiero apresurar nada ni forzarlo. Sólo quiero que sepas que me gusta mucho lo que estamos construyendo, que valoro cada mensaje, cada momento y cada paso que estamos dando. Me emociona esta segunda oportunidad, porque no todos tienen la suerte de vivir algo así… y menos con alguien que realmente vale la pena.
+Quizá antes el tiempo no fue el adecuado. Pero hoy… hoy sí lo es.
+Y si la vida nos cruzó otra vez, no pienso desaprovecharlo.
+Y ahora, después de tanto tiempo de esperar el momento adecuado, quiero preguntarte algo que nace de lo más profundo de mi corazón:
+<h1>💖 Alexa, Te Quiero Demasiado💖</h1> 🌹</p>
+</header>
+
+
+
+<footer>Alexa, eres lo mejor que me ha pasado en la vida ✨🌙</footer>
+
+<script>
+  // Bienvenida
+  window.onload = function(){
+    alert("💖 Bienvenida Alexa 💖\n\nEsta página la hice especialmente para ti, con todo mi corazón 🌹✨");
+    iniciarCorazones(); crearEstrellas(50); iniciarFugaces(); iniciarParticulas();
+  } 
+  function iniciarCorazones(){ setInterval(()=>{for(let i=0;i<window.innerWidth<768?1:3;i++) crearCorazon();},500); }
+  function mostrarAmor(){ for(let i=0;i<20;i++) crearCorazon(); alert("Alexa, te amo con todo mi corazón 💕"); }
+
+  // Música
+  function controlMusica(){
+    let m=document.getElementById("musica");
+    if(m.paused){ m.play(); alert("🎶 Esta cancion me mencionaste que nos pertene y que mas bonito que ponerlo en este proyecto que lo hize con mucha ilusion💖"); }
+    else{ m.pause(); alert("⏸ La música se pausó, pero mi amor por ti nunca se detiene 💕"); }
+  }
+
+  // Estrellas
+  function crearEstrellas(c){ for(let i=0;i<c;i++){ let e=document.createElement("div"); e.classList.add("estrella"); e.style.top=Math.random()*window.innerHeight+"px"; e.style.left=Math.random()*window.innerWidth+"px"; e.style.width=Math.random()*3+1+"px"; e.style.height=e.style.width; e.style.animationDuration=(Math.random()*2+1)+"s"; document.body.appendChild(e); } }
+
+  // Estrellas fugaces
+  function crearFugaz(){ let f=document.createElement("div"); f.classList.add("fugaz"); f.style.top=Math.random()*window.innerHeight/2+"px"; f.style.left=window.innerWidth+"px"; f.style.animationDuration=(Math.random()*1+1.5)+"s"; f.style.animationName="moverFugaz"; document.body.appendChild(f); setTimeout(()=>{f.remove();},2000); }
+  function iniciarFugaces(){ setInterval(crearFugaz,3000); }
+
+  // Partículas rosas
+  function crearParticula(){ let p=document.createElement("div"); p.classList.add("particula"); p.style.left=Math.random()*window.innerWidth+"px"; p.style.animationDuration=(Math.random()*5+5)+"s"; document.body.appendChild(p); setTimeout(()=>{p.remove();},10000); }
+  function iniciarParticulas(){ setInterval(()=>{for(let i=0;i<(window.innerWidth<768?10:20);i++) crearParticula();},500); }
+
+  // Clic mágico
+  document.body.addEventListener("click", function(e){
+    let magia=document.createElement("div"); magia.innerHTML="💖✨";
+    magia.style.position="fixed"; magia.style.left=e.clientX+"px"; magia.style.top=e.clientY+"px";
+    magia.style.fontSize="24px"; magia.style.pointerEvents="none";
+    magia.style.textShadow="0 0 5px #ff77a9,0 0 10px #ff4b5c";
+    document.body.appendChild(magia); setTimeout(()=>{magia.remove();},1000);
+  });
+
+  // Rastro de corazones
+  let lastMove=0;
+  document.addEventListener("mousemove", function(e){
+    if(Date.now()-lastMove<50) return; lastMove=Date.now();
+    let rastro=document.createElement("div"); rastro.innerHTML="❤️";
+    rastro.style.position="fixed"; rastro.style.left=e.clientX+"px"; rastro.style.top=e.clientY+"px";
+    rastro.style.fontSize="16px"; rastro.style.opacity=0.7; rastro.style.pointerEvents="none";
+    rastro.style.textShadow="0 0 5px #ff77a9,0 0 10px #ff4b5c";
+    document.body.appendChild(rastro);
+    setTimeout(()=>{ rastro.style.transition="all 0.8s ease-out"; rastro.style.opacity=0; rastro.style.transform="translateY(-20px)";
+      setTimeout(()=>{rastro.remove();},800);
+    },0);
+  });
+
+  // Mensajes secretos en imágenes
+  const galeriaImgs = document.querySelectorAll(".galeria img");
+  galeriaImgs.forEach(img => {
+    const mensaje = img.getAttribute("data-mensaje");
+    let tooltip;
+    img.addEventListener("mouseenter", () => {
+      tooltip = document.createElement("div");
+      tooltip.innerText = mensaje;
+      tooltip.style.position = "fixed";
+      tooltip.style.left = img.getBoundingClientRect().left + "px";
+      tooltip.style.top = img.getBoundingClientRect().top - 30 + "px";
+      tooltip.style.padding = "8px 12px";
+      tooltip.style.background = "rgba(255,75,92,0.9)";
+      tooltip.style.color = "#fff";
+      tooltip.style.borderRadius = "10px";
+      tooltip.style.boxShadow = "0 0 10px #ff77a9,0 0 20px #ff4b5c";
+      tooltip.style.pointerEvents = "none";
+      tooltip.style.fontSize = "14px";
+      tooltip.style.zIndex = 1000;
+      tooltip.style.transition = "opacity 0.3s";
+      tooltip.style.opacity = 0;
+      document.body.appendChild(tooltip);
+      setTimeout(()=>{ tooltip.style.opacity = 1; }, 10);
+    });
+    img.addEventListener("mouseleave", () => {
+      if(tooltip){ tooltip.style.opacity = 0; setTimeout(()=>{ tooltip.remove(); }, 300); }
+    });
+  });
+</script>
+
+</body>
+</html>
